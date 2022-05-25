@@ -19,6 +19,8 @@ public class ProductController {
 
 // comenentariya
 //    olindi
+
+//    dfdfdf
     @GetMapping("/product")
     public ResponseEntity getAll() {
         return ResponseEntity.ok(service.findAll());
