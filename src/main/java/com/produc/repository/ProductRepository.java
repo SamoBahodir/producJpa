@@ -1,15 +1,12 @@
 package com.produc.repository;
 
 import com.produc.domen.Product;
-import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 
-public interface ProductRepository extends CrudRepository<Product, Long> {
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    List<Product> findByLastName(String lastName);
 
-    Optional<Product> findById(Long id);
 }

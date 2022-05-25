@@ -1,11 +1,14 @@
 package com.produc.domen;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
+import java.util.Date;
+
+@Data
 @Entity
+@Table(name = "product_table")
 public class Product {
 
     @Id
@@ -16,32 +19,14 @@ public class Product {
 
     private String firstName;
 
-    protected Product() {
-    }
+    @DateTimeFormat
+    private Date now;
 
-    public Product(String lastName, String firstName) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-    }
+    private String email;
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                '}';
-    }
+    private  String phone;
 
-    public Long getId() {
-        return id;
-    }
 
-    public String getLastName() {
-        return lastName;
-    }
 
-    public String getFirstName() {
-        return firstName;
-    }
+
 }
