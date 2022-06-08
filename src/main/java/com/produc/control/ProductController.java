@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-
 @RestController
 @RequestMapping("/api")
 public class ProductController {
@@ -45,7 +44,11 @@ public class ProductController {
         service.delete(id);
         return ResponseEntity.ok(id);
 
+    }
 
+    @GetMapping
+    public String hello() {
+        return "hello";
     }
 
 }
