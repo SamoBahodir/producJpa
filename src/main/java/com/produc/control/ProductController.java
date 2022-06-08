@@ -2,9 +2,11 @@ package com.produc.control;
 
 import com.produc.domen.Product;
 import com.produc.service.ProductService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.Version;
 
 
 @RestController
@@ -36,7 +38,13 @@ public class ProductController {
     }
 
     @PutMapping("/product/{id}")
-    public Product update(@RequestBody Product product) {
+    public Product update(@PathVariable Long id, @RequestBody Product product) {
+        Product product1 = new Product();
+        product1.setFirstName(product.getFirstName());
+        product1.setLastName(product.getLastName());
+        product1.setNow(product.getNow());
+        product1.setPhone(product.getPhone());
+        product1.setEmail(product.getEmail());
         return service.save(product);
     }
 
@@ -46,9 +54,7 @@ public class ProductController {
         return ResponseEntity.ok(id);
 
 
-   }
+    }
 
-    
-    
-    
+
 }
