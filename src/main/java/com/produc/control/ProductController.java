@@ -35,10 +35,10 @@ public class ProductController {
         return service.save(product1);
     }
 
-//    @PutMapping("/product/{id}")
-//    public Product update(@RequestBody Product product) {
-//        return service.save(product);
-//    }
+    @PutMapping("/product/{id}")
+    public Product update(@RequestBody Product product) {
+        return service.save(product);
+    }
 //
 //    @DeleteMapping("/product/{id}")
 //    public ResponseEntity delete(@PathVariable Long id) {
